@@ -28,7 +28,104 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+   <style>
+    #infoDiv {
+      width: 100%;
+      height:100%;
+      z-index:1;
+      padding: 50px 0;
+      
+      background-color: lightblue;
+      margin-top: 20px;
+      display:none
+    }
+    ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+    </style>
+<ul>
+  <li><a  id="infoToggleBtn" onclick="infoToggle()" href="#company_info">Company Info</a></li>
+  <li><a id="loginToggleBtn" class="active" onclick="loginToggle()" href="#login">Login/Register</a></li>
+  <li><a href="#contact">Careers</a></li>
+  
+</ul>
+<div id="infoDiv">
+
+  Company: Geeksynergy Technologies Pvt Ltd </br>
+  Address: Sanjayanagar, Bengaluru-56 </br>
+  Phone:+91-805-087-9397 Email: namithavgopal.312@gmail.com </br>
+  #24, 3rd Main Rd, Kempaiah Layout, Shivakrupa CKM Road, Sanjaynagar, Bengaluru-560094
+  </div>
+
+
+<script>
+function infoToggle() {
+  var x = document.getElementById("infoDiv");
+  var y = document.getElementById("root");
+  var z = document.getElementById("infoToggleBtn");
+  var z1 = document.getElementById("loginToggleBtn");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+    y.style.display = "block";
+    z1.classList.add("active");
+    z.classList.remove("active");
+  } else {
+    x.style.display = "block";
+    y.style.display = "none";
+    z.classList.add("active");
+    z1.classList.remove("active");
+  }
+}
+function loginToggle() {
+  var x = document.getElementById("infoDiv");
+  var y = document.getElementById("root");
+  var z = document.getElementById("infoToggleBtn");
+  var z1 = document.getElementById("loginToggleBtn");
+  if (y.style.display === "block") {
+    y.style.display = "none";
+    x.style.display = "block";
+    z.classList.add("active");
+    z1.classList.remove("active");
+  } else {
+    y.style.display = "block";
+    x.style.display = "none";
+    z1.classList.add("active");
+    z.classList.remove("active");
+  }
+}
+</script>
+    <!-- <button name="button" value="OK" type="button" onclick="hello()">Click Here</button>  
+<script>  
+function hello(){  
+  document.write("<h1>Hello member</h1>");
+}  
+</script>  -->
     <div id="root"></div>
+   
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
